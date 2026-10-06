@@ -42,9 +42,36 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+fun CampoEmail(
+    email: String,
+    onEmailChange: (String) -> Unit
+) {
+    TextField(
+        value = email,
+        onValueChange = onEmailChange,
+        label = { Text("Email") }
+    )
+}
+
+@Composable
+fun CampoNombre(
+    nombre: String,
+    onNombreChange: (String) -> Unit
+) {
+    TextField(
+        value = nombre,
+        onValueChange = onNombreChange,
+        label = { Text("Nombre") }
+    )
+}
+
+@Composable
 fun PantallaInscripcion(modifier: Modifier = Modifier) {
 
     var nombre by remember {
+        mutableStateOf("")
+    }
+    var email by remember {
         mutableStateOf("")
     }
 
@@ -55,19 +82,23 @@ fun PantallaInscripcion(modifier: Modifier = Modifier) {
 
         Text("Inscripción")
 
-        TextField(
-            value = nombre,
-            onValueChange = { nuevoNombre ->
+        CampoNombre(
+            nombre = nombre,
+            onNombreChange = { nuevoNombre ->
                 nombre = nuevoNombre
-            },
-            label = {
-                Text("Nombre")
+            }
+        )
+
+        CampoEmail(
+            email = email,
+            onEmailChange = { nuevoEmail ->
+                email = nuevoEmail
             }
         )
 
         Button(
             onClick = {
-                println("Nombre: $nombre")
+                println("Nombre: $nombre, email: $email")
             }
         ) {
             Text("Continuar")
@@ -75,45 +106,6 @@ fun PantallaInscripcion(modifier: Modifier = Modifier) {
     }
 }
 
-@Composable
-fun CampoNombre(modifier: Modifier = Modifier) {
-
-    var nombre by remember {
-        mutableStateOf("")
-    }
-
-    Column {
-
-        TextField(
-            value = nombre,
-            onValueChange = { nuevoNombre ->
-                nombre = nuevoNombre
-            }
-        )
-
-        Text("Nombre introducido: $nombre")
-    }
-}
-
-@Composable
-fun Contador(modifier: Modifier = Modifier) {
-
-    var contador by remember {
-        mutableIntStateOf(10)
-    }
-
-    Column(modifier = modifier) {
-        Text("Has pulsado $contador veces")
-
-        Button(
-            onClick = {
-                contador+=2
-            }
-        ) {
-            Text("Pulsar")
-        }
-    }
-}
 
 @Composable
 fun ActividadItem(
