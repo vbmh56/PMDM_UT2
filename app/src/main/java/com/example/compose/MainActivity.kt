@@ -66,48 +66,6 @@ fun CampoNombre(
 }
 
 @Composable
-fun PantallaInscripcion(modifier: Modifier = Modifier) {
-
-    var nombre by remember {
-        mutableStateOf("")
-    }
-    var email by remember {
-        mutableStateOf("")
-    }
-
-    Column(
-        modifier = Modifier.padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-
-        Text("Inscripción")
-
-        CampoNombre(
-            nombre = nombre,
-            onNombreChange = { nuevoNombre ->
-                nombre = nuevoNombre
-            }
-        )
-
-        CampoEmail(
-            email = email,
-            onEmailChange = { nuevoEmail ->
-                email = nuevoEmail
-            }
-        )
-
-        Button(
-            onClick = {
-                println("Nombre: $nombre, email: $email")
-            }
-        ) {
-            Text("Continuar")
-        }
-    }
-}
-
-
-@Composable
 fun ActividadItem(
     nombre: String,
     categoria: String
