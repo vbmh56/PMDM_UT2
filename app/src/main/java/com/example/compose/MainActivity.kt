@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    CampoNombre(modifier = Modifier.padding(innerPadding))
+                    PantallaInscripcion(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun PantallaInscripcion() {
+fun PantallaInscripcion(modifier: Modifier = Modifier) {
 
     var nombre by remember {
         mutableStateOf("")
