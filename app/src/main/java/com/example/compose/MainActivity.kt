@@ -34,83 +34,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    PantallaInscripcion(modifier = Modifier.padding(innerPadding))
+                    PantallaActividades(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
     }
 }
 
-@Composable
-fun CampoEmail(
-    email: String,
-    onEmailChange: (String) -> Unit
-) {
-    TextField(
-        value = email,
-        onValueChange = onEmailChange,
-        label = { Text("Email") }
-    )
-}
 
-@Composable
-fun CampoNombre(
-    nombre: String,
-    onNombreChange: (String) -> Unit
-) {
-    TextField(
-        value = nombre,
-        onValueChange = onNombreChange,
-        label = { Text("Nombre") }
-    )
-}
 
-@Composable
-fun ActividadItem(
-    nombre: String,
-    categoria: String
-) {
-    Column (
-        modifier = Modifier.padding(16.dp)
-    ){
-        Image(
-            painter = painterResource(R.drawable.baseline_60fps_24),
-            contentDescription = "Imagen de la actividad",
-            modifier = Modifier.size(200.dp)
-        )
-        Row(
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ){
-            Text(text = nombre)
-            Text(text = categoria)
-        }
-        Button(
-            onClick = {
-                println("Botón pulsado")
-            }
-        ) {
-            Text("Ver detalle")
-        }
-    }
-}
-
-@Composable
-fun PantallaActividades() {
-    Column(
-        verticalArrangement = Arrangement.spacedBy(4.dp)
-    )
-    {
-        ActividadItem(
-            nombre = "Taller de Android",
-            categoria = "Tecnología"
-        )
-        ActividadItem(
-            nombre = "Taller de Kotlin",
-            categoria = "Tecnología"
-        )
-        ActividadItem(
-            nombre = "Taller deportivo",
-            categoria = "Deporte"
-        )
-    }
-}
