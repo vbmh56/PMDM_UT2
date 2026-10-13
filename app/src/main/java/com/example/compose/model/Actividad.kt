@@ -1,6 +1,7 @@
-package com.example.compose
+package com.example.compose.model
 
 import androidx.annotation.DrawableRes
+import com.example.compose.R
 
 data class Actividad(
     val id: Int,

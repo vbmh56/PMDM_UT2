@@ -1,4 +1,4 @@
-package com.example.compose
+package com.example.compose.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -17,40 +17,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-
-@Composable
-fun ActividadItem(actividad: Actividad) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        Image(
-            painter = painterResource(actividad.imagen),
-            contentDescription = actividad.nombre,
-            modifier = Modifier.size(80.dp)
-        )
-
-        Text(actividad.nombre)
-
-        Row(
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
-            Text("Categoría: ${actividad.categoria}")
-            Text(actividad.modalidad)
-        }
-
-        Button(
-            onClick = {
-                println("Actividad seleccionada: ${actividad.nombre}")
-            },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text("Ver actividad")
-        }
-    }
-}
+import com.example.compose.model.Actividad
+import com.example.compose.model.actividadesEjemplo
+import com.example.compose.view.components.ActividadItem
 
 @Composable
 fun PantallaActividades(modifier: Modifier = Modifier) {
