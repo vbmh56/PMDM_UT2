@@ -37,7 +37,7 @@ fun ActividadItem(actividad: Actividad) {
         Row(
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            Text(actividad.categoria)
+            Text("Categoría: ${actividad.categoria}")
             Text(actividad.modalidad)
         }
 

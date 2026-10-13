@@ -32,5 +32,26 @@ val actividadesEjemplo = listOf(
         categoria = "Arte",
         descripcion = "Practica encuadres y composición.",
         imagen = R.drawable.baseline_60fps_24
+    ),
+    Actividad(
+        id = 4,
+        nombre = "Fotografía con el móvil 2",
+        categoria = "Arte 2",
+        descripcion = "Practica encuadres y composición.",
+        imagen = R.drawable.baseline_60fps_24
+    ),
+    Actividad(
+        id = 5,
+        nombre = "Fotografía con el móvil 3",
+        categoria = "Arte 3",
+        descripcion = "Practica encuadres y composición.",
+        imagen = R.drawable.baseline_60fps_24
+    ),
+    Actividad(
+        id = 6,
+        nombre = "Fotografía con el móvil 3",
+        categoria = "Arte 4",
+        descripcion = "Practica encuadres y composición.",
+        imagen = R.drawable.baseline_60fps_24
     )
 )
