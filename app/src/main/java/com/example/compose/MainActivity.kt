@@ -10,6 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.example.compose.model.actividadesEjemplo
 import com.example.compose.ui.theme.ComposeTheme
+import com.example.compose.view.ActividadesApp
 import com.example.compose.view.PantallaActividades
 import com.example.compose.view.PantallaDetalle
 
@@ -20,11 +21,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    PantallaDetalle(
-                        actividad = actividadesEjemplo[1],
-                        onInscribirse = {
-                            println("Inscribirse")
-                        }
+                    ActividadesApp(
+                        modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
